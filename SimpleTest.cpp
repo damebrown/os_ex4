@@ -1,7 +1,13 @@
 #include "VirtualMemory.h"
+#include "PhysicalMemory.h"
 
 #include <cstdio>
 #include <cassert>
+#include <iostream>
+
+using namespace std;
+
+
 
 int main(int argc, char **argv) {
     VMinitialize();
@@ -19,4 +25,6 @@ int main(int argc, char **argv) {
     printf("success\n");
 
     return 0;
+
+
 }
