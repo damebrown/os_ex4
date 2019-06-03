@@ -18,10 +18,10 @@ void PMread(uint64_t physicalAddress, word_t* value) {
     if (RAM.empty())
         initialize();
 
-    assert(physicalAddress < RAM_SIZE);
     if (physicalAddress >= RAM_SIZE){
         std::cout <<"address too big. address: "<< physicalAddress<<endl<<endl<<endl;
     }
+    assert(physicalAddress < RAM_SIZE);
 
     *value = RAM[physicalAddress / PAGE_SIZE][physicalAddress
              % PAGE_SIZE];
