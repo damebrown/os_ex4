@@ -3,7 +3,8 @@
 #include <unordered_map>
 #include <cassert>
 #include <cstdio>
-
+#include <iostream>
+using namespace std;
 typedef std::vector<word_t> page_t;
 
 std::vector<page_t> RAM;
@@ -18,6 +19,9 @@ void PMread(uint64_t physicalAddress, word_t* value) {
         initialize();
 
     assert(physicalAddress < RAM_SIZE);
+    if (physicalAddress >= RAM_SIZE){
+        std::cout <<"address too big. address: "<< physicalAddress<<endl<<endl<<endl;
+    }
 
     *value = RAM[physicalAddress / PAGE_SIZE][physicalAddress
              % PAGE_SIZE];
